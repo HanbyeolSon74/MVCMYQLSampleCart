@@ -1,0 +1,82 @@
+/* 컨테이너 레이아웃 */
+.container {
+  display: flex;
+  width: 100vw;
+  margin: auto;
+  min-height: 100vh;
+  margin-top: 75px;
+  border-bottom: 1px solid;
+}
+
+/* 왼쪽: 제품 이미지 */
+.product-image {
+  flex-basis: 50%; /* 정확히 반반 */
+  background-color: #f6f6f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid;
+}
+
+.product-image img {
+  max-width: 80%; /* 이미지가 너무 커지지 않게 조절 */
+  height: auto;
+}
+
+/* 오른쪽: 제품 정보 */
+.product-info {
+  flex-basis: 50%; /* 정확히 반반 */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #666;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* 네비게이션 스타일 */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nav-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+.breadcrumb {
+  font-size: 14px;
+  color: black; /* 검정색 적용 */
+}
+
+.breadcrumb a {
+  color: black; /* 링크 색상도 검정색으로 */
+  text-decoration: none; /* 밑줄 제거 */
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 수정</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+    <link rel="stylesheet" href="/public/css/edit.css" />
+  </head>
+  <body>
+    <h1>상품 수정</h1>
+
+    <form action="/admin/update-product" method="POST" enctype="multipart/form-data" onsubmit="syncDetails()">
+      <input type="hidden" name="id" value="<%= product.id %>" />
+      <input type="hidden" name="existingImage" value="<%= product.imageurl %>" />
+
+      <label>상품 이름:</label>
+      <input type="text" name="name" value="<%= product.name %>" required /><br />
+
+      <label>가격:</label>
+      <input type="text" name="price" value="<%= product.price %>" required /><br />
+
+      <!-- 카테고리 수정 -->
+      <label>카테고리:</label>
+      <select name="category" required>
+        <option value="dessert" <%= product.category === 'dessert' ? 'selected' : '' %>>Dessert</option>
+        <option value="beverage" <%= product.category === 'beverage' ? 'selected' : '' %>>Beverage</option>
+        <option value="merch" <%= product.category === 'merch' ? 'selected' : '' %>>Merch</option>
+      </select><br />
+
+      <label>상세 내용:</label>
+      <div id="details"></div>
+      <input type="hidden" name="details" id="detailsInput" />
+
+
+      <!-- 기존 이미지 미리보기 -->
+      <label>현재 이미지:</label>
+      <div class="image-upload" onclick="document.getElementById('imageInput').click()">
+        <img id="preview" src="<%= product.imageurl %>" alt="상품 이미지" />
+      </div>
+
+      <input type="file" id="imageInput" name="image" accept="image/*" onchange="previewImage(event)" />
+
+      <button type="submit">수정 완료</button>
+    </form>
+
+   
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <!-- <script>
+      const details = new toastui.Editor({
+        el: document.querySelector("#details"),
+        previewStyle: "vertical",
+        height: "400px",
+        initialValue: `<%= product.details %>`, // 기존 상세 내용 미리 표시
+      });
+
+      // 상세 내용 동기화 함수
+      function syncDetails() {
+        // Toast UI Editor에서 작성된 마크다운을 HTML로 변환
+        const htmlDetails = details.getHTML();  // 에디터 내용 HTML로 변환
+        document.getElementById("detailsInput").value = htmlDetails;  // 변환된 HTML을 hidden input에 저장
+      }
+    </script> -->
+    <script src="/public/js/edit.js"></script>
+  </body>
+</html>

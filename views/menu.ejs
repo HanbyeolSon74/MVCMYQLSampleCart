@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENU</title>
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <link rel="stylesheet" href="/public/css/menu.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+            <li><a href="/" class="bold-text">NUDAKE</a></li>
+          <li class="menu-item">
+            <a href="#">STORES</a>
+            <ul class="substore">
+              <li><a href="#">DOSAN</a></li>
+              <li><a href="#">SEONGSU</a></li>
+              <li><a href="#">SINSA</a></li>
+              <li><a href="#">SHANGHAI</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="/menu">MENU</a>
+            <ul class="submenu">
+              <li><a href="#">DESSERT</a></li>
+              <li><a href="#">BEVERAGE</a></li>
+              <li><a href="#">MERCH</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="#">PROJECTS</a>
+            <ul class="subproject">
+              <li><a href="#">JENNIECOLLAB</a></li>
+              <li><a href="#">NEWJEANSCOLLAB</a></li>
+              <li><a href="#">SINSA</a></li>
+              <li><a href="#">BIRTH</a></li>
+              <li><a href="#">PURPOSE</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">SOCIAL</a></li>
+        </ul>
+      </nav>
+
+      <div>find</div>
+    </header>
+
+    <!-- main -->
+    <div class="menu-container">
+      <div class="menu-nav">
+        <div class="category-item active">
+          <img src="/public/img/dessert.webp" alt="DESSERT" />
+          <span>DESSERT</span>
+        </div>
+        <div class="category-item">
+          <img src="/public/img/beverage.webp" alt="BEVERAGE" />
+          <span>BEVERAGE</span>
+        </div>
+        <div class="category-item">
+          <img src="/public/img/HAND DIP CANDLE-1.webp" alt="MERCH" />
+          <span>MERCH</span>
+        </div>
+      </div>
+
+      <div class="menu-container">
+        <div class="menu-content">
+          <h2 class="menu-title">DESSERT(<%= products.length %>)</h2>
+          <div class="filter-container">
+            <div class="filter-button">FILTER</div>
+          </div>
+        </div>
+      <div class="product-grid">
+        <% products.forEach((product) => { %>
+        <div
+          class="product-item"
+          data-category="<%= product.category.trim() %>"
+        >
+          <a href="/menu/<%= product.id %>">
+            <img src="<%= product.imageurl %>" alt="<%= product.name %>" />
+            <p class="product-name"><%= product.name %></p>
+          </a>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <ul class="social-links">
+          <li><a href="#">INSTAGRAM</a></li>
+          <li><a href="#">KAKAOTALK</a></li>
+          <li><a href="#">YOUTUBE</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="footer-info">
+          <p>
+            IICombined Co., Ltd. | Business Registration Number: 119-86-38589
+          </p>
+          <p>
+            Representative: Hangook Kim | 41, Eoulmadang-Ro 5-Gil, Mapo-Gu,
+            Seoul
+          </p>
+        </div>
+        <p class="copyright">© NUDAKE</p>
+      </div>
+    </footer>
+
+    <script src="/public/js/menu.js"></script>
+  </body>
+</html>

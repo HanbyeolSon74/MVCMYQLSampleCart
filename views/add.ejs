@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="/public/css/add.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+    />
+  </head>
+  <body>
+    <h1>상품 등록</h1>
+
+    <form
+      action="/admin/add-product"
+      method="POST"
+      enctype="multipart/form-data"
+      onsubmit="syncDetails()"
+    >
+      <label>상품 이름:</label>
+      <input type="text" name="name" id="name" required />
+      <span id="name-error" style="color: red"></span><br />
+
+      <label>가격:</label>
+      <input type="text" name="price" required /><br />
+
+      <label>상세 내용:</label>
+      <div id="details"></div>
+      <input type="hidden" name="details" id="detailsInput" />
+
+      <label>카테고리:</label>
+      <select name="category" required>
+        <option value="dessert">Dessert</option>
+        <option value="beverage">Beverage</option>
+        <option value="merch">Merch</option></select
+      ><br />
+
+      <label>상품 이미지:</label>
+      <div
+        class="image-upload"
+        onclick="document.getElementById('imageInput').click()"
+      >
+        <span>이미지 선택</span>
+        <input
+          type="file"
+          id="imageInput"
+          name="image"
+          accept="image/*"
+          onchange="previewImage(event)"
+        />
+        <img id="preview" src="" alt="이미지 미리보기" style="display: none" />
+      </div>
+
+      <button type="submit">상품 등록</button>
+    </form>
+
+    <!-- 상품 목록 테이블 -->
+    <h2>상품 목록</h2>
+    <table>
+      <!-- 테이블 태그 추가 -->
+      <thead>
+        <tr>
+          <th>상품 이미지</th>
+          <th>상품 이름</th>
+          <th>가격</th>
+          <th>카테고리</th>
+          <th>상세 내용</th>
+          <th>관리</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i < products.length; i++) { %>
+        <tr>
+          <td>
+            <img
+              src="<%= products[i].imageurl %>"
+              alt="상품 이미지"
+              style="max-width: 100px; max-height: 100px"
+            />
+          </td>
+          <td><%= products[i].name %></td>
+          <td><%= products[i].price %></td>
+          <td><%= products[i].category %></td>
+          <td>
+            <div></div>
+            <%= products[i].details %>
+          </td>
+          <td>
+            <button
+              class="button edit-button"
+              onclick="editProduct(`<%= products[i].id %>`)"
+            >
+              수정
+            </button>
+            <button
+              class="button delete-button"
+              onclick="deleteProductClient(`<%= products[i].id %>`)"
+            >
+              삭제
+            </button>
+          </td>
+        </tr>
+
+        <% } %>
+      </tbody>
+    </table>
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      const details = new toastui.Editor({
+        el: document.querySelector("#details"),
+        previewStyle: "vertical",
+        height: "400px",
+      });
+
+      // editor.getHtml()을 사용해서 에디터 내용 받아오기
+      see1 = function () {
+        console.log(details.getHTML());
+      };
+      see2 = function () {
+        console.log(details.getMarkdown());
+      };
+    </script>
+    <script src="/public/js/add.js"></script>
+  </body>
+</html>
