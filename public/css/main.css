@@ -10,18 +10,20 @@ body {
   background: white;
 }
 
+/* 헤더 고정 크기 설정 */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   background: white;
-  padding: 20px 40px;
+  padding: 20px 40px; /* 상하 여백을 동일하게 설정 */
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   border-bottom: 1px solid;
-  transition: border-bottom 0.3s ease; /* 호버 시 부드럽게 보더가 내려가도록 */
+  transition: border-bottom 0.3s ease;
+  height: 80px; /* 고정 높이 설정 */
 }
 
 /* 로고 */
@@ -162,7 +164,7 @@ main {
 
 footer {
   width: 100%;
-
+  padding: 40px 20px;
   text-align: center;
 }
 

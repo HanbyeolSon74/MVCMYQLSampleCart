@@ -1,0 +1,60 @@
+/* 기본 스타일 */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+/* 스토어 메인 영역 */
+.store-main {
+  text-align: center;
+  padding-top: 100px;
+}
+
+/* 매장 이미지 컨테이너 */
+#stores-images-container {
+  display: flex;
+  flex-direction: column; /* 각 이미지를 세로로 나열 */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 각 매장 이미지 아이템 */
+.image-stores {
+  width: 100%;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+/* 이미지가 가로 전체를 꽉 채우도록 설정 */
+.image-stores img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0; /* 모서리를 둥글게 하고 싶다면 원하는 값으로 변경 */
+}
+
+/* 이미지 아래 텍스트 (매장 이름) */
+.image-stores a {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111;
+}
+
+/* 반응형 디자인 (필요시) */
+@media (max-width: 768px) {
+  .store-main h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+}

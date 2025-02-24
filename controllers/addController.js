@@ -1,5 +1,6 @@
 const productModel = require("../models/addModel");
 const marked = require("marked");
+const Op = require("sequelize"); // Sequelize 연산자
 
 // 상품 이름 중복처리
 const checkProductNameExist = async (req, res) => {

@@ -6,6 +6,7 @@ const port = 3000;
 const menuRouter = require("./routers/menuRouter");
 const productRoutes = require("./routers/addRouter");
 const detailRouter = require("./routers/detailRouter");
+const storesRouter = require("./routers/storesRouter.js");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use("/menu", menuRouter); // 메뉴 페이지
 app.use("/admin", productRoutes);
 app.use("/", productRoutes); // 관리자 페이지
 app.use("/menu", detailRouter); // 상세 페이지
+app.use("/stores", storesRouter); // 상세 페이지
 
 app.get("/", (req, res) => {
   res.render("main");
