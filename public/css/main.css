@@ -10,20 +10,51 @@ body {
   background: white;
 }
 
-/* 헤더 고정 크기 설정 */
+/* 헤더 스타일 */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   background: white;
-  padding: 20px 40px; /* 상하 여백을 동일하게 설정 */
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  border-bottom: 1px solid;
-  transition: border-bottom 0.3s ease;
-  height: 80px; /* 고정 높이 설정 */
+  border-bottom: 1px solid black; /* 기본 보더 */
+  transition: all 0.3s ease;
+}
+
+/* 기존 보더를 가상 요소로 변경 */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: none; /* 기존 보더 제거 */
+}
+
+/* 보더를 가상 요소로 생성 */
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: black;
+  transition: bottom 0.3s ease;
+}
+
+/* 메뉴 항목을 호버하면 헤더의 보더가 아래로 이동 */
+nav ul li:hover ~ header::after {
+  bottom: -6px; /* 보더를 아래로 이동 */
 }
 
 /* 로고 */
@@ -32,7 +63,11 @@ header {
   font-size: 30px;
 }
 
-/* 메뉴 스타일 */
+/* 네비게이션 스타일 */
+nav {
+  position: relative;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -54,34 +89,27 @@ nav ul li a {
   list-style: none;
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 200px; /* 서브메뉴의 너비 설정 */
+  left: 0px;
+  width: 100vw;
   background: white;
-  padding: 0;
   margin: 0;
-  border: 1px solid;
+  border-bottom: 1px solid black;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   z-index: 999;
-  display: block; /* 가로로가 아닌 세로로 나열되게 하기 위해 block으로 설정 */
+  line-height: 1; /* 줄 간격 줄이기 */
 }
 
 /* 메뉴 아이템 호버 시 서브메뉴 표시 */
 .menu-item:hover ul {
   opacity: 1;
   visibility: visible;
-}
-
-/* 메뉴 아이템 호버 시 헤더 보더 내려가도록 설정 */
-.menu-item:hover ~ header {
-  border-bottom: 3px solid #000; /* 서브메뉴가 보일 때 보더가 두꺼워지도록 설정 */
-}
-
-/* 서브메뉴 항목 스타일 */
-.menu-item ul li {
-  padding: 10px;
-  display: block; /* 항목을 세로로 나열하기 위해 block 설정 */
+  height: auto; /* 자동 높이 */
 }
 
 .menu-item ul li a {
@@ -90,6 +118,7 @@ nav ul li a {
   font-size: 16px;
   display: block;
 }
+*/
 
 /* 본문 전체 레이아웃 */
 main {
