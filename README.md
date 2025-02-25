@@ -1,8 +1,8 @@
 ### Dayke
-- **프로젝트 소개**: 
-- **개발 동기**: MVC패턴과 MYSQL 연습을 위해 만들게 되었습니다.
-- **화면 구성**: 
-- **주요 기능**: 
+- **프로젝트 소개**: MVC, MYSQL을 사용하여 만들었습니다.
+- **개발 동기**: NUDAKE를 좋아해서 만들게 되었습니다.
+- **화면 구성**: 관리자 페이지, 메인 페이지, 가게 페이지, 메뉴 페이지, 상세 페이지
+- **주요 기능**: 상품 등록, 상품 수정, 상품 삭제, 등록한 상품 페이지에 불러오는 기능을 구연했습니다.
 
 ![Image](https://github.com/user-attachments/assets/63d44ad9-56b6-434c-95b3-906a806ebe3e)
 
@@ -18,21 +18,12 @@
 ![Image](https://github.com/user-attachments/assets/81d6988b-4982-4770-9a05-c72da1b01e3b)
 
 
-### 3. 예제 (이미지 & 배지 추가)
-```md
-# My Project 🚀
-![GitHub stars](https://img.shields.io/github/stars/사용자명/레포명)
-![GitHub forks](https://img.shields.io/github/forks/사용자명/레포명)
+![Image](https://github.com/user-attachments/assets/09134cfe-7bb0-4773-8348-5ef976dcc7e2)
 
-![프로젝트 스크린샷](https://example.com/screenshot.png)
+![Image](https://github.com/user-attachments/assets/5e740dbf-188b-48b7-95a9-e2706383ed7e)
 
+![Image](https://github.com/user-attachments/assets/d04e0716-1c1a-445a-8e83-61d44efbc825)
 
-## 📌 소개
-이 프로젝트는 ~~을 하는 웹 애플리케이션입니다.
+![Image](https://github.com/user-attachments/assets/7b85e3bb-8164-465c-a218-fa3cfc3bedf9)
 
-## 🔧 설치 방법
-```bash
-git clone https://github.com/사용자명/레포명.git
-cd 프로젝트폴더
-npm install
-npm start
+![Image](https://github.com/user-attachments/assets/b684983e-30e4-44f0-b858-bb6ef0a01c86)
