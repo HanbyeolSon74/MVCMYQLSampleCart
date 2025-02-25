@@ -19,6 +19,8 @@
 
 ![프로젝트 스크린샷](https://example.com/screenshot.png)
 
+![Image](https://github.com/user-attachments/assets/da5da30e-111b-4fd7-916b-d412911baa8d)
+
 ## 📌 소개
 이 프로젝트는 ~~을 하는 웹 애플리케이션입니다.
 
