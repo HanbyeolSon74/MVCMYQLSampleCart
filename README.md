@@ -1,17 +1,21 @@
+### Dayke
+- **프로젝트 소개**: 
+- **개발 동기**: MVC패턴과 MYSQL 연습을 위해 만들게 되었습니다.
+- **화면 구성**: 
+- **주요 기능**: 
 
----
+![Image](https://github.com/user-attachments/assets/63d44ad9-56b6-434c-95b3-906a806ebe3e)
 
-### 2. 꾸미기 (마크다운 문법)
-- **제목**: `#`을 사용하여 제목을 만들 수 있음 (`#`은 H1, `##`는 H2, `###`는 H3)
-- **코드 블록**: 백틱(```)을 사용
-- **링크**: `[링크 텍스트](URL)`
-- **이미지 추가**: `![이미지 설명](이미지 URL)`
-- **리스트**: `-` 또는 숫자를 사용 (`1.`, `2.`)
-- **굵게/기울임**: `**굵게**`, `*기울임*`
+![Image](https://github.com/user-attachments/assets/daebef20-b8d5-4b1a-acb1-c93a5d57edde)
 
----
+![Image](https://github.com/user-attachments/assets/eb8556fe-bae7-44e5-a8f4-8c33328ece5d)
 
-![Image](https://github.com/user-attachments/assets/da5da30e-111b-4fd7-916b-d412911baa8d)
+
+
+
+![Image](https://github.com/user-attachments/assets/3260652d-71d8-47b8-9e09-b4637197639f)
+
+![Image](https://github.com/user-attachments/assets/81d6988b-4982-4770-9a05-c72da1b01e3b)
 
 
 ### 3. 예제 (이미지 & 배지 추가)
