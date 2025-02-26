@@ -75,6 +75,7 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4개씩 배치 */
+  border-bottom: 1px solid black;
 }
 
 .product-item {

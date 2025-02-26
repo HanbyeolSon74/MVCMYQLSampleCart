@@ -10,16 +10,17 @@ body {
 /* 스토어 메인 영역 */
 .store-main {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 90px;
 }
 
 /* 매장 이미지 컨테이너 */
 #stores-images-container {
   display: flex;
-  flex-direction: column; /* 각 이미지를 세로로 나열 */
+  flex-direction: column;
   width: 100%;
   margin: 0;
   padding: 0;
+  margin-top: 20px;
 }
 
 /* 각 매장 이미지 아이템 */
@@ -27,6 +28,8 @@ body {
   width: 100%;
   transition: transform 0.3s ease;
   margin-bottom: 20px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 
 /* 이미지가 가로 전체를 꽉 채우도록 설정 */
@@ -37,18 +40,17 @@ body {
   border: none;
   padding: 0;
   margin: 0;
-  border-radius: 0; /* 모서리를 둥글게 하고 싶다면 원하는 값으로 변경 */
 }
 
 /* 이미지 아래 텍스트 (매장 이름) */
 .image-stores a {
   display: block;
-  margin-top: 10px;
+  margin-top: -70px;
   font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  color: #111;
+  color: white;
 }
 
 /* 반응형 디자인 (필요시) */
